@@ -1,0 +1,21 @@
+<header class="visualTaste">
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Advent Pro"
+  />
+  <span class="font-style" style="text-align: center"
+    >Smart Digital Stethoscope <i class="fas fa-heartbeat"></i
+  ></span>
+  <div class="login">
+    <p *ngIf="!!user">{{ user.email }}</p>
+    <p *ngIf="!!user">{{ user.displayName }}</p>
+    <i
+      *ngIf="!user"
+      class="fas fa-2x fa-sign-in-alt highlight"
+      (click)="openLogin()"
+    ></i>
+    <button *ngIf="!!user" class="btn btn-primary" (click)="signout()">
+      Sign Out
+    </button>
+  </div>
+</header>

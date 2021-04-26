@@ -1,0 +1,54 @@
+header {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  align-items: center;
+  padding-bottom: 0px;
+  min-height: 100px;
+  flex-direction: row;
+}
+
+span {
+  font-size: 64px;
+  margin: 10px 15px 0px;
+  color: rgb(43, 43, 43);
+  position: relative;
+}
+
+.btn {
+  font-size: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.login {
+  color: #000000c5;
+  right: 20px;
+  position: absolute;
+  text-align: center;
+}
+p {
+  margin-bottom: 0px;
+}
+
+/* .logo {
+  position: absolute;
+  left: 0;
+  max-width: 125px;
+  height: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+}
+.social-icons {
+  position: absolute;
+  right: 0px;
+  margin-top: 28px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+@media (max-width: 768px) {
+  .social-icons {
+    visibility: hidden;
+  }
+} */

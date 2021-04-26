@@ -1,0 +1,87 @@
+<div class="center">
+  <div class="row" style="max-width: 100%">
+    <div class="col-md-4 col-sm-10">
+      <h4>Here you are able to record and save your audio recordings</h4>
+      <i
+        class="fas fa-3x fa-microphone highlight"
+        [ngClass]="{ recording: isRecording }"
+        (click)="startRecording()"
+      ></i>
+      <div *ngIf="!isRecording">
+        <div class="form-group">
+          <label for="SampleRateControl"
+            >Select # of samples per second</label
+          >
+          <select class="form-control" [(ngModel)]="selectedRate">
+            <option *ngFor="let rate of sampleRates" value="{{ rate }}">
+              {{ rate }} samples per second
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <h4 *ngIf="isRecording">Now Recording...</h4>
+      <h4>
+        {{ successMessage }}
+      </h4>
+      <mat-spinner *ngIf="predicting" class="center" [diameter]="30"></mat-spinner>
+      <h4>
+        {{ prediction }}
+      </h4>
+      <h4>
+        {{confidence}}
+      </h4>
+      <h4>View the saved recordings to see the actual waveform or classify it again.</h4>
+      <div *ngIf="!!user">
+        <h4>You are signed in, you can save new files.</h4>
+      </div>
+      <div *ngIf="!user">
+        <h4>You are not signed in, you can record new files but they won't be saved. 
+          Login to save the recordings to your account</h4>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+      <label for="upload">Select a file already on your computer to upload</label>
+      <div></div>
+      <input type="file" id="upload" (change)="fileUploaded($event)" />
+      <h4 class="warning">{{errorMessage}}</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="(!!recording || audioURL != '') && !isRecording" class="card text-left col-md-4 col-sm-2">
+      <div class="card-header">
+        <input type="text" [(ngModel)]="fileName" />
+        <i
+          class="fas fa-lg fa-trash-alt highlight"
+          (click)="deleteRecording()"
+        >
+        </i>
+      </div>
+      <div class="card-body">
+        <audio controls (play)="wavesurfer.play()" (pause)="wavesurfer.pause()" (seeked)="updateWaveformPosition($event)">
+          <source [src]="audioURL | safeResourceUrl" type="audio/wav" />
+          Your browser does not support the audio element.
+        </audio>
+        
+        <div>
+          Size: {{ fileSize }} KB
+        </div>
+        <mat-form-field style="display: inline" appearance="fill" *ngIf="dbUser && dbUser.user_type === UserType.PrimaryCareProfessional">
+          <mat-label>Save to specific patient</mat-label>
+          <mat-select [(value)]="selected_patient">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let patient of MyPatients" [value]="patient.ref">{{ patient.email }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <button class="btn btn-primary" (click)="saveRecording()">
+        Save Recording
+      </button>
+    </div>
+    <div class="col-md-8 col-sm-10">
+      <div id="waveform"></div>
+    </div>
+  </div>
+</div>
+

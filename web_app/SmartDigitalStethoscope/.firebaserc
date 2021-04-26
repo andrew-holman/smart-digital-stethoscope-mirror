@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "smartdigitalstethoscope"
+  },
+  "targets": {
+    "smartdigitalstethoscope": {
+      "hosting": {
+        "SmartDigitalStethoscope": [
+          "smartdigitalstethoscope"
+        ]
+      }
+    }
+  }
+}

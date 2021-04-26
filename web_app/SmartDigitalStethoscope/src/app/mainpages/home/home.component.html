@@ -1,0 +1,52 @@
+<div class="center">
+  <div class="row">
+    <div class="col-md-6 col-sm-10">
+      <h2 style = "font-size: xx-large;"> 
+        <br> The new way to keep <br>your heart in check
+      </h2>
+      <!-- <img src= "../../../assets/stethoscope.jpg" alt="Stethoscope"> -->
+      <i class="fas fa-stethoscope fa-7x"></i>
+      
+      <p style= "font-size: medium; right: 100px;">
+        
+        <br><br>
+        <br> 
+         Welcome to Smart-Digital Stethoscope. This device is the newest way 
+        to check you heart and communicate with your health care professional. 
+        This stethoscope allows the patient to take a recording of their own 
+        heartbeat which is uploaded to their private account on our webapp. Your health
+        care professional can then access this file and to determine the next part in 
+        your health journey. It also provides a system that will flag and recordings
+        that appear to indicate possible heart problems such as murmurs. Our goal is to
+        help provide the best care possible for all. 
+        <br><br><br>
+      </p>
+     <h6 style= "font-size: medium;">
+        <br><br> <br><br> <br><br> <br><br> <br><br>
+        If you are interested in joining the Smart-Digital Stethoscope experience
+        please contact sd-may03@iastate.edu
+      </h6>
+    </div>
+    <div *ngIf="dbUser && dbUser.user_type === UserType.PrimaryCareProfessional" class="col-md-6 col-sm-10">
+      
+      <div class="card">
+        <div class="card-header">
+          <h2>Patient Management</h2>
+        </div>
+        <div class="card-body">
+          <dss-link-account [user]="user"></dss-link-account>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="dbUser && dbUser.user_type === UserType.Admin" class="col-md-6 col-sm-10">
+      
+      <div class="card">
+        <div class="card-header">
+          <h2>Admin create new account</h2>
+        </div>
+        <div class="card-body">
+          <dss-create-account></dss-create-account>
+        </div>
+      </div>
+  </div>
+</div>

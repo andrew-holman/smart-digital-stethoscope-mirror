@@ -1,0 +1,24 @@
+<div class="center">
+  <h4 class="text body-color" *ngIf="!user">
+    Sign in to access your saved files
+  </h4>
+  <div id="audioContent" *ngIf="!!user">
+    <h4>You can access your saved audio files here.</h4>
+    <button class="btn btn-primary" (click)="refreshAudio.emit()">
+      Refresh Audio Files
+    </button>
+    <div *ngIf="fileInfo.length === 0">
+      <h4>Looks like you don't have any recordings, go to "Record New" to create some.</h4>
+    </div>
+    <div *ngIf="!loading">
+      <div class="audioList" *ngFor="let ownerFileInfo of dividedFileInfo; let i = index">
+        <h2 class="left">
+          {{ ownerFileInfo[0].owner }}
+        </h2>
+        <div *ngFor="let info of ownerFileInfo; let j = index">
+          <dss-audio-card [fileInfo]="info" [cardNum]="i+j" [canDelete]="info.owner === user.email" [predictionUrl]="predictionUrl" (deleteAudio)="deleteAudio.emit($event);"></dss-audio-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

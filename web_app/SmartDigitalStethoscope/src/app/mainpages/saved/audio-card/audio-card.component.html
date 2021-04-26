@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="card text-left col-md-4 col-sm-10" style="padding-left:0; padding-right:0;">
+    <div class="card-header">
+      {{ fileInfo?.fileName }}
+      <!-- <i class="fas fa-lg fa-paper-plane highlight"
+        (click)="fileSending=fileInfo.fileName; receivingUserName='';"
+      ></i> -->
+      <i
+        *ngIf="canDelete"
+        class="fas fa-lg fa-trash-alt highlight"
+        (click)="deleteAudio.emit(fileInfo.fileName)"
+      ></i>
+    </div>
+    <div class="card-body">
+      <!-- <div *ngIf="fileSending == fileInfo.fileName">
+        <input type="text" [(ngModel)]="receivingUserName"/>
+        <button class="btn btn-primary" style="margin-left:20px" (click)="sendFile()">Send File</button>
+      </div> -->
+      <audio id = "{{fileInfo.url}}" name="url" controls (play)="playWaveform(fileInfo.url)" (pause)="pauseWaveform(fileInfo.url)" (seeked)="updateWaveformPosition($event, fileInfo.url)">
+        <source [src]="fileInfo.url" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+      <div></div>
+      
+      <div class="inline">
+        Size: {{ fileInfo?.fileSize }} KB
+        <!-- <button class="btn btn-primary" style="margin-left:20px" (click)="viewRecording(url)">
+          View Waveform
+        </button> -->
+      </div>
+      <button class="btn btn-primary inline" style="margin-left:20px" (click)="predict()">
+        Analyze
+      </button>
+      <mat-spinner *ngIf="predicting" [diameter]="30"></mat-spinner>
+      <div>
+        {{prediction}}
+      </div>
+      <div>
+        {{confidence}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 col-sm-10">
+    <div id="{{ 'waveformSaved' + cardNum }}">
+    </div>
+  </div>
+</div>

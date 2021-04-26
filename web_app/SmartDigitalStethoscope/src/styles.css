@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.font-style {
+  font-family: "Playfair Display";
+}
+.body-color {
+  color: rgb(43, 43, 43);
+}
+
+.visualTaste {
+  background-color: #686fafc5;
+}
+.visualTasteDark {
+  background-color: #3b3c41c5;
+}
+main {
+  flex: auto;
+  background-color: #fff;
+}
+
+header {
+  flex-direction: row;
+  background-color: white;
+}
+
+footer {
+  padding: 15px 30px;
+  vertical-align: bottom;
+  font-size: 14px;
+  color: rgb(43, 43, 43);
+}
+.fa-heartbeat {
+  color: red;
+}
+.fa-heart-broken {
+  color: red;
+}
+.row {
+  margin-right: 0px;
+}
+.btn:hover:enabled {
+  background-color: #979cc2c5;
+}
+.btn:focus {
+  background-color: #48494ec5;
+}
+.btn-primary {
+  border-color: #000000c5;
+  background-color: #fdfdffc5;
+  color: #000000;
+}
+
+.highlight:hover {
+  color: #292c46c5;
+  cursor: pointer;
+  text-shadow: 0 0 10px #292c46c5;
+}
+.highlight {
+  margin-right: 10px;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.error {
+  color: red;
+}
+.left {
+  margin: auto;
+  display: block;
+  text-align: left;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,34 @@
+<div class="left">
+  <h2>
+    Your Patients:
+  </h2>
+  <div *ngIf="MyPatients.length === 0">
+    You don't have any patients yet.
+  </div>
+  <ul *ngIf="MyPatients.length !== 0">
+    <li *ngFor="let patient of MyPatients">
+      {{ patient.email }}
+    </li>
+  </ul>
+</div>
+
+<form class="form left" (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="AvailablePatients.length !== 0">
+  <label>
+    Available Patients:
+    <div></div>
+    <select formControlName="patients" multiple>
+      <option *ngFor="let patient of AvailablePatients" [value]="patient.ref">{{ patient.email }}</option>
+    </select>
+  </label>
+  <div></div>
+  <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+</form>
+<div *ngIf="AvailablePatients.length === 0">
+  There are no patients without primary care professionals already.
+</div>
+<div class="error">
+  {{Error}}
+</div>
+<div>
+  {{Success}}
+</div>

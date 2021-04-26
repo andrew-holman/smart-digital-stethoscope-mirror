@@ -1,0 +1,21 @@
+.center {
+  margin: auto;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.recording {
+  color: green;
+}
+.fa-trash-alt {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+}
+.warning {
+  color: rgba(211, 6, 6, 0.623);
+}

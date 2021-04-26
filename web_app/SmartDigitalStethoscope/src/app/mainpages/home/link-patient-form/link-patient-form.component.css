@@ -1,0 +1,20 @@
+.left {
+  margin: auto;
+  display: block;
+  text-align: left;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.btn:hover:enabled {
+  background-color: #292c46c5;
+}
+.btn:focus {
+  background-color: #3d426dc5;
+}
+.btn-primary {
+  border-color: #848cd3c5;
+  background-color: #6970b1c5;
+  color: #ffffff;
+}

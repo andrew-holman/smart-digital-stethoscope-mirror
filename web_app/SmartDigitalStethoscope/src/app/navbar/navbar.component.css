@@ -1,0 +1,29 @@
+/* .nav-link {
+  color: #7a4444 !important;
+} */
+
+.nav-tabs.nav > li > .nav-link.active {
+  color: #2e2e2e !important;
+}
+.nav-tabs.nav > li > a {
+  color: #ebebeb;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media (min-width: 401px) {
+  .offset {
+    margin-top: 62px;
+  }
+}
+@media (max-width: 400px) {
+  .offset {
+    margin-top: 102px;
+  }
+}
+.nav {
+  z-index: 9999;
+}

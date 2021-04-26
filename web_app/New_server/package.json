@@ -1,0 +1,26 @@
+{
+  "name": "new_server",
+  "browser": {
+    "child_process": false
+  },
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.4.0",
+    "@tensorflow/tfjs-backend-cpu": "3.4.0",
+    "@tensorflow/tfjs-backend-webgl": "3.4.0",
+    "@tensorflow/tfjs-converter": "3.4.0",
+    "@tensorflow/tfjs-core": "3.4.0",
+    "@tensorflow/tfjs-data": "3.4.0",
+    "@tensorflow/tfjs-layers": "3.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ngrok": "^4.0.1",
+    "node-gyp": "^8.0.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,38 @@
+<form class="form left" (ngSubmit)="onSubmit()" [formGroup]="form">
+  <label>
+    Account Name:
+    <input type="text" formControlName="name">
+  </label>
+  <div></div>
+  <label>
+    Account Email:
+    <input type="text" formControlName="email">
+  </label>
+  <div></div>
+  <label>
+    Account Password:
+    <input type="password" formControlName="password">
+  </label>
+  <div></div>
+  <label>
+    Account Type:
+    <select formControlName="user_type" >
+      <option *ngFor="let type of UserType" [value]="type" (select)="onSubmit()">{{ UserTypeString(type) }}</option>
+    </select>
+  </label>
+  <div></div>
+  <label *ngIf="form.get('user_type').value == UserTypeEnum.Patient">
+    Patient's Primary Care Professional:
+    <select formControlName="careProf">
+      <option *ngFor="let prof of Professionals" [value]="prof.ref">{{ prof.email }}</option>
+    </select>
+  </label>
+  <label *ngIf="form.get('user_type').value == UserTypeEnum.PrimaryCareProfessional">
+    Professional's Patients:
+    <select formControlName="patients" multiple>
+      <option *ngFor="let patient of AvailablePatients" [value]="patient.ref">{{ patient.email }}</option>
+    </select>
+  </label>
+  <div></div>
+  <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+</form>

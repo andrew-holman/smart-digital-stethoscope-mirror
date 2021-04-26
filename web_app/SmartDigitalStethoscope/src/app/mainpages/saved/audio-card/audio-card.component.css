@@ -1,0 +1,32 @@
+.center {
+  margin: auto;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.audio_record {
+  background-color: rgb(235, 213, 255);
+  outline-color: #848cd3c5;
+  outline-width: 5px;
+}
+
+.inline {
+  display: inline;
+}
+
+.fa-trash-alt {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+}
+
+.fa-paper-plane {
+  position: absolute;
+  right: 40px;
+  top: 15px;
+}

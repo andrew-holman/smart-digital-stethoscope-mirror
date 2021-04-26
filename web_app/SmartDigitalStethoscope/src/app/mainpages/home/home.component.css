@@ -1,0 +1,20 @@
+.center {
+  margin: auto;
+  padding-left: 50px;
+  display: block;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.left {
+  margin: auto;
+  display: block;
+  text-align: left;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
